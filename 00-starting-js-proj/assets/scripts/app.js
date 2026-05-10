@@ -2,9 +2,9 @@ import { apiKey } from "./util.js";
 
 // console.log(apiKey);  
 
-function greet() {
-    console.log("Hello!");
+function greetUser(userName, message = "Hello!") {
+    console.log(`${message}, ${userName}!`);
 }
 
-greet(); // finally executes Hello!
-greet(); // again executes Hello!
+greetUser("Alice"); // finally executes "Hello, Alice!"
+greetUser("Bob", "Hi"); // again executes "Hi, Bob!"
