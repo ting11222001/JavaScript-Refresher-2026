@@ -1,4 +1,4 @@
-import {apiKey, abc as content} from "./util.js";
-
-console.log(content);  // abc
-
+const userMessage = "Hello, World!!";
+userMessage = "Hello, World!";
+console.log(userMessage); // Hello, World!!
+console.log(userMessage); // Hello, World!!

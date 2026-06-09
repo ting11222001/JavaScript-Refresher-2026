@@ -106,4 +106,39 @@ import {apiKey, abc as content} from "./util.js";
 console.log(content);  // abc
 ```
 
-## Revisiting Functions & Parameters
+## Revisiting Variables & Values
+
+All things in an app are about data. A variable stores a value. It's about Reusability and Readability.
+
+String, Number, Boolean, Null and Undefined:
+- `undefined`: default if no value was assigned yet
+- `null`: Explicitly assigned by developer (reset value)
+- Double or Single quotes with the strings.
+
+Key things to note:
+- camelCasing
+- describe what the "thing" it identifies contains or does e.g. userName, isCorrect, loadData, ...
+
+For example:
+```js
+// In app.js
+let userMessage = "Hello, World!";
+console.log(userMessage); // Hello, World!
+
+// In app.js I can print it twice and have one central place to update the variable value
+let userMessage = "Hello, World!!";
+console.log(userMessage); // Hello, World!!
+console.log(userMessage); // Hello, World!!
+```
+
+With `const`, I can't reassign value to the variable. That is the main difference from `let`.
+```js
+// In app.js
+const userMessage = "Hello, World!!";
+userMessage = "Hello, World!";
+console.log(userMessage); // Hello, World!!
+console.log(userMessage); // Hello, World!!
+
+// error
+app.js:2 Uncaught TypeError: Assignment to constant variable.
+```
