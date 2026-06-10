@@ -142,3 +142,24 @@ console.log(userMessage); // Hello, World!!
 // error
 app.js:2 Uncaught TypeError: Assignment to constant variable.
 ```
+
+## Revisiting Operators
+
+Use `===` to check equality (strict equality).
+
+For example:
+```js
+1 === "1"  // false — different types
+1 === 1    // true
+```
+
+Use `+` for addition calculations and concatenating two strings into one.
+
+For example:
+```js
+console.log("hello" + "world"); // helloworld
+console.log(10 / 5);    // 2
+console.log(10 === 10); // true
+console.log(10 === "10"); // false, because === checks for both value and type
+console.log(10 == "10");  // true, because == checks for value only and does type coercion
+```
