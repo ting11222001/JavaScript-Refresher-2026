@@ -586,3 +586,18 @@ function greet(greetFn) {
 
 greet(() => console.log("Hello, World!")); // Hello, World!
 ```
+
+## Defining Functions Inside Of Functions
+
+For example, I can define `greet()` inside `init()` and when `init()` is called, `greet()` will be called accordingly. I can't call `greet()` outside of `init()` directly:
+```js
+function init() {
+    function greet() {
+        console.log("Hello, World!");
+    }
+    greet();
+}
+
+init();
+// greet(); -> if I call it here, it will say "Uncaught ReferenceError: greet is not defined"
+```
