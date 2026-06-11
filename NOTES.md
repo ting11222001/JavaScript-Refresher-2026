@@ -476,3 +476,32 @@ function greet({ firstName, lastName }) {
 
 console.log(greet({ firstName: "Li-Ting", lastName: "Liao" })); // Hello, Li-Ting Liao!
 ```
+
+## The Spread Operator
+
+This `...` can pull out the elements out of an array/object and then add them together into an new array/object.
+
+For example - with the arrays:
+```js
+const hobbies = ["coding", "hiking"];
+const newhobbies = ["running"];
+
+const mergedHobbies = [...hobbies, ...newhobbies];
+console.log(mergedHobbies); // ['coding', 'hiking', 'running']
+```
+
+For example - with the objects:
+```js
+const user = {
+    name: "Li-Ting",
+    age: 10
+}
+
+const extendedUser = {
+    isAdmin: true,
+    ...user
+}
+
+console.log(user); // {name: 'Li-Ting', age: 10}
+console.log(extendedUser); // {isAdmin: true, name: 'Li-Ting', age: 10}
+```

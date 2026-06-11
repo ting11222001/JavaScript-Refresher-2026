@@ -1,5 +1,12 @@
-function greet({ firstName, lastName }) {
-    return `Hello, ${firstName} ${lastName}!`;
+const user = {
+    name: "Li-Ting",
+    age: 10
 }
 
-console.log(greet({ firstName: "Li-Ting", lastName: "Liao" }));
+const extendedUser = {
+    isAdmin: true,
+    ...user
+}
+
+console.log(user);
+console.log(extendedUser);
