@@ -364,3 +364,59 @@ console.log(edittedHobbies);
 ```
 
 ## Destructuring
+
+Originally:
+```js
+const userNameData = ["Li-Ting", "Liao"];
+
+const firstName = userNameData[0];
+const lastName = userNameData[1];
+
+console.log(`First Name: ${firstName}`);
+console.log(`Last Name: ${lastName}`);
+```
+
+Then it can be shorten like this - so the LHS is pulling values from the array:
+```js
+const [firstName, lastName] = ["Li-Ting", "Liao"];
+
+console.log(firstName); // Li-Ting
+console.log(lastName); // Liao
+```
+
+Same for objects.
+
+Originally:
+```js
+const userName = {
+    firstName: "Li-Ting",
+    lastName: "Liao"
+}
+
+console.log(userName.firstName); // Li-Ting
+console.log(userName.lastName); // Liao
+```
+
+Then, shorten it like this:
+```js
+const { firstName, lastName } = {
+    firstName: "Li-Ting",
+    lastName: "Liao"
+}
+
+console.log(firstName); // Li-Ting
+console.log(lastName); // Liao
+```
+
+Note that object destructuring are pulling the exact name of the keys, but for array destructuring I can define the pulled value names as it's based on positions.
+
+I can use alias to the pulled out key name in object destructuring like this:
+```js
+const { firstName: userFirstName, lastName } = {
+    firstName: "Li-Ting",
+    lastName: "Liao"
+}
+
+console.log(userFirstName); // Li-Ting
+console.log(lastName); // Liao
+```
