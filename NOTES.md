@@ -295,3 +295,72 @@ Classes here are not used much in React.
 
 ## Arrays & Array Methods like map()
 
+Arrays can contain other arrays, objects, numbers, strings, etc.
+
+For example:
+```js
+const content = [
+  [
+    "React is extremely popular",
+    "It makes building complex, interactive UIs a breeze",
+    "It's powerful & flexible",
+    "It has a very active and versatile ecosystem"
+  ],
+  [
+    "Official web page (react.dev)",
+    "Next.js (Fullstack framework)",
+    "React Native (build native mobile apps with React)"
+  ]
+];
+```
+
+Utility methods of arrays e.g. `push`:
+```js
+const hobbies = ["coding", "hiking", "running"];
+
+console.log(hobbies); // (3) ['coding', 'hiking', 'running']
+hobbies.push("cooking");
+console.log(hobbies); // (4) ['coding', 'hiking', 'running', 'cooking']
+```
+
+E.g. `findIndex`:
+```js
+const hobbies = ["coding", "hiking", "running"];
+
+const result = hobbies.findIndex(item => item === "hiking");
+console.log(result);  // 1
+```
+
+Or write like this for the arrow function part:
+```js
+const result = hobbies.findIndex((item) => {
+    return item === "running";
+});
+
+console.log(result); // 2
+```
+
+E.g. `map` which returns a new array of transformed elements, so the original array remains untouched:
+```js
+const hobbies = ["coding", "hiking", "running"];
+
+const edittedHobbies = hobbies.map(item => item + " is fun!")
+console.log(edittedHobbies); // ['coding is fun!', 'hiking is fun!', 'running is fun!']
+console.log(hobbies); // ['coding', 'hiking', 'running']
+```
+
+I can use `map` to transform objects:
+```js
+const hobbies = ["coding", "hiking", "running"];
+
+const edittedHobbies = hobbies.map((item) => ({text: item}))
+console.log(edittedHobbies);
+/**
+(3) [{…}, {…}, {…}]
+0: {text: 'coding'}
+1: {text: 'hiking'}
+2: {text: 'running'}
+*/
+```
+
+## Destructuring

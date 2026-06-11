@@ -1,11 +1,10 @@
-const user = { 
-    name: "Li-Ting", 
-    age: 10,
-    greet() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-    }
-};
+const hobbies = ["coding", "hiking", "running"];
 
-console.log(user); // {name: 'Li-Ting', age: 10}
-console.log(user.name); // Li-Ting
-user.greet(); // Hello, my name is Li-Ting and I am 10 years old.
+const edittedHobbies = hobbies.map((item) => ({text: item}))
+console.log(edittedHobbies);
+/**
+(3) [{…}, {…}, {…}]
+0: {text: 'coding'}
+1: {text: 'hiking'}
+2: {text: 'running'}
+*/
