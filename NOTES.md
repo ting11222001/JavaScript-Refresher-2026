@@ -505,3 +505,21 @@ const extendedUser = {
 console.log(user); // {name: 'Li-Ting', age: 10}
 console.log(extendedUser); // {isAdmin: true, name: 'Li-Ting', age: 10}
 ```
+
+
+## Revisiting Control Structures
+
+If-else statements is similar to other programming languages.
+
+for loop here mentioned `of` which is to create a `const` variable out of each element in an array:
+```js
+const hobbies = ["coding", "hiking"];
+
+for (const hobby of hobbies) {
+    console.log(hobby);
+    /**
+     * coding
+     * hiking
+     */
+}
+```

@@ -1,12 +1,5 @@
-const user = {
-    name: "Li-Ting",
-    age: 10
-}
+const hobbies = ["coding", "hiking"];
 
-const extendedUser = {
-    isAdmin: true,
-    ...user
+for (const hobby of hobbies) {
+    console.log(hobby);
 }
-
-console.log(user);
-console.log(extendedUser);
