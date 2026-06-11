@@ -163,3 +163,46 @@ console.log(10 === 10); // true
 console.log(10 === "10"); // false, because === checks for both value and type
 console.log(10 == "10");  // true, because == checks for value only and does type coercion
 ```
+
+## Revisiting Functions & Parameters
+
+Use 'function' keyword to define the function:
+```js
+function greet() {                  
+    console.log("Hello, World!");
+}
+
+greet(); // calling it
+greet(); // calling it for multiple times
+```
+
+Passing parameters:
+```js
+function greetUser(userName, message) {
+    console.log(`Hello, ${userName}! ${message}`);
+}
+
+greetUser("Alice", "How are you?");     // Hello, Alice! How are you?
+greetUser("Bob", "Nice to meet you!");  // Hello, Bob! Nice to meet you!
+```
+
+Default parameter value:
+```js
+function greetUser(userName, message = "Welcome to JavaScript!") {
+    console.log(`Hello, ${userName}! ${message}`);
+}
+
+greetUser("Charlie"); // Hello, Charlie! Welcome to JavaScript!
+```
+
+Return a value - make sure the function name is clear about what it does:
+```js
+function createGreeting(userName, message = "Welcome to JavaScript!") {
+    return `Hello, ${userName}! ${message}`;
+}
+
+const greeting1 = createGreeting("Alice", "How are you?"); // using this for readability or just console.log(createGreeting(...))
+console.log(greeting1); // Hello, Alice! How are you?
+```
+
+## Arrow Functions

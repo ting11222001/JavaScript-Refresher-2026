@@ -1,5 +1,8 @@
-console.log("hello" + "world"); // helloworld
-console.log(10 / 5);    // 2
-console.log(10 === 10); // true
-console.log(10 === "10"); // false, because === checks for both value and type
-console.log(10 == "10");  // true, because == checks for value only and does type coercion
+function createGreeting(userName, message = "Welcome to JavaScript!") {
+    return `Hello, ${userName}! ${message}`;
+}
+
+const greeting1 = createGreeting("Alice", "How are you?");
+console.log(greeting1);
+// console.log(createGreeting("Bob", "Nice to meet you!"));
+// console.log(createGreeting("Charlie"));
