@@ -506,7 +506,6 @@ console.log(user); // {name: 'Li-Ting', age: 10}
 console.log(extendedUser); // {isAdmin: true, name: 'Li-Ting', age: 10}
 ```
 
-
 ## Revisiting Control Structures
 
 If-else statements is similar to other programming languages.
@@ -522,4 +521,68 @@ for (const hobby of hobbies) {
      * hiking
      */
 }
+```
+
+## Using Functions as Values
+
+Use `setTimeout` as an example.
+
+Pass a named function into it:
+```js
+function handleTimeout() {
+    console.log("This message is shown after 1 second.");
+}
+
+setTimeout(handleTimeout, 1000); // This message is shown after 1 second.
+```
+
+Note that just using the name `handleTimeout` without the parentheses to define it without executing it yet, or it will get executed right away.
+
+Pass an arrow function - as it's designed to be anonymous, so to give the arrow function a name, I can assign it to a `const` variable:
+```js
+const handleTimeout = () => {
+    console.log("This message is shown after 2 seconds.");
+}
+
+setTimeout(handleTimeout, 2000); // This message is shown after 2 seconds.
+```
+
+Or I can directly pass an arrow function inside `setTimeout` which will also get executed the same time when passing the function name:
+```js
+setTimeout(() => {
+    console.log("This message is shown after 3 seconds.");
+}, 3000); // This message is shown after 3 seconds.
+```
+
+Overall:
+```js
+function handleTimeout() {
+    console.log("Timeout!");
+}
+
+const handleTimeout2 = () => {
+    console.log("Timeout ... again!");
+}
+
+setTimeout(handleTimeout, 1000);
+setTimeout(handleTimeout2, 2000);
+setTimeout(() => {
+    console.log("Timeout ... again and again!");
+}, 3000);
+
+/**
+ * print:
+ * Timeout!
+ * Timeout ... again!
+ * Timeout ... again and again!
+ */
+```
+
+Other than built-in functions, I can create my own function and pass a function as value like this:
+```js
+function greet(greetFn) {
+    greetFn();
+}
+
+greet(() => console.log("Hello, World!")); // Hello, World!
 ```
