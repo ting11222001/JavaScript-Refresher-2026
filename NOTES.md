@@ -206,3 +206,64 @@ console.log(greeting1); // Hello, Alice! How are you?
 ```
 
 ## Arrow Functions
+
+Useful for anonymous functions i.e. the functions that don't need a name.
+
+For example, the function that should be triggered when a button is clicked in React:
+```js
+<div id="tabs">
+    <menu>
+        <button
+        className={activeContentIndex === 0 ? "active" : ""}
+        onClick={() => setActiveContentIndex(0)}
+        >
+...
+```
+
+`() => setActiveContentIndex(0)` is the value for the click listener. It doesn't carry any name.
+
+For example:
+```js
+// util.js
+export default (userName) => {
+  console.log(`Hello, ${userName}!`);
+}
+
+// app.js
+import greet from './util.js'; // I can assign a name to that default export
+greet("Li-Ting");
+```
+
+## More on the Arrow Function Syntax
+
+### Omitting parameter list parentheses
+
+If your arrow functions takes exactly one parameter, you may omit the wrapping parentheses.
+
+Instead of
+```
+(userName) => { ... }
+```
+
+you could write:
+```
+userName => { ... }
+```
+
+### Omitting function body curly braces
+
+If your arrow function contains no other logic but a return statement, you may omit the curly braces and the return keyword.
+
+Instead of
+```
+number => { 
+  return number * 3;
+}
+```
+
+you could write
+```
+number => number * 3;
+```
+
+### Revisiting Objects & Classes
