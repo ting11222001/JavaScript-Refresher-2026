@@ -1,8 +1,3 @@
-function init() {
-    function greet() {
-        console.log("Hello, World!");
-    }
-    greet();
-}
-
-greet();
+const hobbies = "cooding";
+hobbies = "gaming";
+console.log(hobbies);

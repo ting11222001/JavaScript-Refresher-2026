@@ -601,3 +601,84 @@ function init() {
 init();
 // greet(); -> if I call it here, it will say "Uncaught ReferenceError: greet is not defined"
 ```
+
+## Reference vs Primitive Values
+
+Strings etc. are primitive values.
+
+Arrays/Objects are referenced values. Remember arrays are objects! The underlyaing value can be edited without changing that address so the value can be edited without reassigning the variable.
+
+So even though the array is assigned to a `const` variable, I can still edit it like this:
+```js
+const hobbies = ["coding", "hiking", "cooking"];
+hobbies.push("gaming"); // This works. You are editing the contents of the box, not the address.
+console.log(hobbies); // ['coding', 'hiking', 'cooking', 'gaming']
+```
+
+But I can't do this:
+```js
+const hobbies = "cooding";
+hobbies = "gaming";
+console.log(hobbies); // Uncaught TypeError: Assignment to constant variable.
+```
+
+### Analogy
+
+#### Primitives (strings, numbers, booleans)
+Think of a primitive like writing a value on a sticky note. When you change it, you throw the old note away and write a brand new one.
+
+```js
+let message = "Hello";
+message = "World"; // The old "Hello" is gone. "World" is a brand new value.
+```
+
+You cannot edit the original value. You can only replace it.
+
+#### Objects and Arrays (reference values)
+
+Think of an object or array like a box stored in a warehouse. The variable holds the address (location) of that box, not the box itself.
+
+```js
+const hobbies = ["coding", "hiking"];
+hobbies.push("gaming");
+console.log(hobbies); // ['coding', 'hiking', 'gaming']
+```
+
+Here is what happens step by step:
+
+- JavaScript puts the array in memory (the warehouse).
+- The variable `hobbies` stores the address to find it.
+- `push` goes to that address and adds "gaming" to the box.
+- The address stays the same. Only the contents of the box change.
+
+#### Why can you edit a `const` array?
+
+`const` means the address cannot change. It does not mean the contents at that address cannot change.
+```js
+const hobbies = ["coding", "hiking"];
+
+// This works. You are editing the contents of the box, not the address.
+hobbies.push("gaming");
+
+// This fails. You are trying to point hobbies to a brand new box.
+hobbies = ["swimming"]; // TypeError: Assignment to constant variable.
+```
+
+So:
+- Primitive: string, number, boolean. Stored as the value itself. You cannot edit in place. You replace it.
+- Reference: array, object. Stored as an address in memory. You can edit in place. You edit the contents.
+
+## JS Array functions
+
+Here are the important ones in React projects:
+
+Particularly important in this course are:
+
+map()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+find()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+findIndex()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+filter()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+reduce()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
+concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
+slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
