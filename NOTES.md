@@ -266,4 +266,32 @@ you could write
 number => number * 3;
 ```
 
-### Revisiting Objects & Classes
+## Revisiting Objects & Classes
+
+Define an object:
+```js
+// app.js
+const user = { name: "Li-Ting", age: 10 };
+
+console.log(user); // {name: 'Li-Ting', age: 10}
+console.log(user.name); // Li-Ting
+```
+
+Define a method as its property:
+```js
+const user = { 
+    name: "Li-Ting", 
+    age: 10,
+    greet() {   // method!
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+};
+
+console.log(user); // {name: 'Li-Ting', age: 10, greet: ƒ}
+user.greet(); // Hello, my name is Li-Ting and I am 10 years old.
+```
+
+Classes here are not used much in React.
+
+## Arrays & Array Methods like map()
+
