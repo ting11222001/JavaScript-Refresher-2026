@@ -420,3 +420,59 @@ const { firstName: userFirstName, lastName } = {
 console.log(userFirstName); // Li-Ting
 console.log(lastName); // Liao
 ```
+
+## Destructuring in Function Parameter Lists
+
+For example, if a function accepts a parameter that will contain an object it can be destructured to "pull out" the object properties and make them available as locally scoped variables (i.e., variables only available inside the function body).
+
+`order` is an object. `const order = {id: 5, currency: 'USD', amount: 15.99}`.
+
+Here's an example:
+```
+function storeOrder(order) {
+  localStorage.setItem('id', order.id);
+  localStorage.setItem('currency', order.currency);
+}
+```
+Instead of accessing the order properties via the "dot notation" inside the `storeOrder` function body, you could use destructuring like this:
+```
+function storeOrder({id, currency}) { // destructuring
+  localStorage.setItem('id', id);
+  localStorage.setItem('currency', currency);
+}
+```
+The destructuring syntax is the same as taught in the previous lecture - just without creating a constant or variable manually.
+
+Instead, id and currency are "pulled out" of the incoming object (i.e., the object passed as an argument to `storeOrder`).
+
+It's very important to understand, that `storeOrder` still only takes one parameter in this example! It does not accept two parameters. Instead, it's one single parameter - an object which then just is destructured internally.
+
+The function would still be called like this:
+```
+storeOrder({id: 5, currency: 'USD', amount: 15.99}); // one argument / value!
+```
+
+### My example
+
+Start with this:
+```js
+const user = {
+    firstName: "Li-Ting",
+    lastName: "Liao"
+}
+
+function greet(user) {
+    return `Hello, ${user.firstName} ${user.lastName}!`;
+}
+
+console.log(greet(user)); // Hello, Li-Ting Liao!
+```
+
+Or define the object and pass it in as a parameter directly and then destructure it like this:
+```js
+function greet({ firstName, lastName }) {
+    return `Hello, ${firstName} ${lastName}!`;
+}
+
+console.log(greet({ firstName: "Li-Ting", lastName: "Liao" })); // Hello, Li-Ting Liao!
+```

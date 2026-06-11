@@ -1,7 +1,5 @@
-const { firstName: userFirstName, lastName } = {
-    firstName: "Li-Ting",
-    lastName: "Liao"
+function greet({ firstName, lastName }) {
+    return `Hello, ${firstName} ${lastName}!`;
 }
 
-console.log(userFirstName); // Li-Ting
-console.log(lastName); // Liao
+console.log(greet({ firstName: "Li-Ting", lastName: "Liao" }));
